@@ -1,4 +1,6 @@
 import { BsPencilSquare as FigureIcon } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { LinkButton } from "./LinkButton";
 
 export function AppBar() {
   return (
@@ -11,28 +13,28 @@ export function AppBar() {
 
 function Icon() {
   return (
-    <a href="/" className="flex flex-row items-center gap-2">
+    <Link to="/" className="flex flex-row items-center gap-2">
       <FigureIcon className="text-slate-950 text-4xl" />
       <h1 className="text-xl uppercase font-bold">Notepads</h1>
-    </a>
+    </Link>
   );
 }
 
 function LinkAppBar() {
   return (
     <nav className="flex flex-row gap-4">
-      <a
-        href=""
+      <LinkButton
+        to="/notepads/1"
         className="bg-slate-950 text-yellow-500 text-sm uppercase py-2 px-3 font-bold rounded-md hidden md:block"
       >
-        pagina inicial
-      </a>
-      <a
-        href=""
+        Lista de notepads
+      </LinkButton>
+      <LinkButton
+        to="/criar-notepad"
         className="bg-slate-950 text-yellow-500 text-sm uppercase py-2 px-3 font-bold rounded-md "
       >
         Criar Notepad
-      </a>
+      </LinkButton>
     </nav>
   );
 }
